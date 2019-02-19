@@ -8,7 +8,13 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
 # Install Server
 
 1. [Nginx installation](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04) `sudo apt install nginx -y`
+    Go to nginx site configuration `cd /etc/nginx/site-available`
     
+    Backup Default config file `sudo cp default default.bk`
+    
+    Setup config in `sufo vim default` file, set root `/var/www/html/dist/demo`
+    
+    Restart server `sudo service nginx restart`
 
 2. [Apache2 installation](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-18-04-quickstart) `sudo apt install apache2 -y`
  
@@ -16,7 +22,7 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
     
     Backup default config file `sudo cp 000-default.conf 000-default.conf.bk`
     
-    Setup config in `sudo vim 000-default.conf` file, set `DocumentRoot /var/www/html/demo`
+    Setup config in `sudo vim 000-default.conf` file, set `DocumentRoot /var/www/html/dist/demo`
     
     Restart the server `sudo service apache2 restart`
 
@@ -38,11 +44,11 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
   
     Create zip of dist folder`zip -r  dist.zip dist/`
     
-    Copy zip to destinsation server using ``scp -i ~/.ssh/key.pem dist.zip  server URL:/home/ubuntu`
+    Copy zip to destinsation server using `scp -i ~/.ssh/key.pem dist.zip  server URL:/home/ubuntu`
     
     Install unzip on deplotyment server `sudo apt install unzip`
     
-    Unzip to desired directory `sudo unzip /home/ubuntu/dist.zip -d demo/` 
+    Unzip to desired directory `sudo unzip /home/ubuntu/dist.zip -d /var/www/html/` 
     
 # Key
 Download key from AWS console and save it to `~/.ssh` folder and then give below permission
