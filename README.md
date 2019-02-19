@@ -2,8 +2,13 @@
 Simple angular website deployment on Amazan EC2 instance
 
 # Setup Server configurations
+1. Launch instance [t2.micro freetier](https://ap-south-1.console.aws.amazon.com/ec2/v2/home?region=ap-south-1#LaunchInstanceWizard:)
 
-Inboud Rules: Add `HTTP` Port `80` source anywhere
+2. Download key from AWS console and save it to `~/.ssh` folder and then give below permission **[You can download key only once ]**
+
+    `chmod 400 ~/.ssh/demo.pem`
+
+3. Set Inboud Rules: Add `HTTP` Port `80` source anywhere
 
 # Install Server
 
@@ -29,7 +34,7 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
     
     e. Restart the server `sudo service apache2 restart`
 
-# Create simple Angular App:
+# Create simple Angular App on local:
 
 1. `ng new demo`
 
@@ -43,7 +48,7 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
 
 2. Git clone and create build
 
-3. Copy deliverable directly using scp/sftp etc
+3. Copy deliverable directly using `scp`, `sftp`, `rsync` etc
   
     a. Create zip of dist folder`zip -r  dist.zip dist/`
     
@@ -53,7 +58,6 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
     
     4. Unzip to desired directory `sudo unzip /home/ubuntu/dist.zip -d /var/www/html/` 
     
-# Key
-Download key from AWS console and save it to `~/.ssh` folder and then give below permission
+    5. Restart web server
+    
 
-`chmod 400 ~/.ssh/demo.pem`
