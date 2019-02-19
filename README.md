@@ -12,7 +12,7 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
     
     Backup Default config file `sudo cp default default.bk`
     
-    Setup config in `sufo vim default` file, set root `/var/www/html/dist/demo`
+    Setup config in `sufo vim default` file, set root `/var/www/html/dist/demo` and [fallback config](https://angular.io/guide/deployment#fallback-configuration-examples) `try_files $uri $uri/ /index.html;`
     
     Restart server `sudo service nginx restart`
 
@@ -23,6 +23,8 @@ Inboud Rules: Add `HTTP` Port `80` source anywhere
     Backup default config file `sudo cp 000-default.conf 000-default.conf.bk`
     
     Setup config in `sudo vim 000-default.conf` file, set `DocumentRoot /var/www/html/dist/demo`
+    
+    Add [`.htaccess`](https://angular.io/guide/deployment#fallback-configuration-examples) at root 
     
     Restart the server `sudo service apache2 restart`
 
