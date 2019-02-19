@@ -42,9 +42,22 @@ Simple angular website deployment on Amazan EC2 instance
 
 3. `ng build --prod`
 
+# Copy Code from Local to remote server
+
+1. **scp:
+    Same syntax like copy:
+    
+    `scp -i ~/.ssh/demo.pem dist.zip  ubuntu@ec2-52-66-7-24.ap-south-1.compute.amazonaws.com:/home/ubuntu`
+
+2. `rsync`: `rsync -Pav -e "ssh -i ~/.ssh/demo.pem" dist/ ubuntu@ec2-52-66-7-24.ap-south-1.compute.amazonaws.com:/home/ubuntu/dist`
+
+3. **sftp**:
+    `sftp -i ~/.ssh/demo.pem   ubuntu@ec2-52-66-7-24.ap-south-1.compute.amazonaws.com`
+    `get` and `put` `lls`, `lcd` etc as per need
+
 # Continuous delivery
 
-1. Jenkins/Codepipeline/Teamcity etc
+1. Jenkins/Codepipeline/Codestar/Teamcity etc
 
 2. Git clone and create build
 
@@ -52,12 +65,12 @@ Simple angular website deployment on Amazan EC2 instance
   
     a. Create zip of dist folder`zip -r  dist.zip dist/`
     
-    2. Copy zip to destinsation server using `scp -i ~/.ssh/key.pem dist.zip  server URL:/home/ubuntu`
+    b. Copy zip to destinsation server using `scp -i ~/.ssh/key.pem dist.zip  server URL:/home/ubuntu`
     
-    3. Install unzip on deplotyment server `sudo apt install unzip`
+    c. Install unzip on deplotyment server `sudo apt install unzip`
     
-    4. Unzip to desired directory `sudo unzip /home/ubuntu/dist.zip -d /var/www/html/` 
+    d. Unzip to desired directory `sudo unzip /home/ubuntu/dist.zip -d /var/www/html/` 
     
-    5. Restart web server
+    e. Restart web server
     
 
