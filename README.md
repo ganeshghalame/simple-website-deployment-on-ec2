@@ -73,4 +73,28 @@ Simple angular website deployment on Amazan EC2 instance
     
     e. Restart web server
     
+ # Hosting website on [S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html):
+    
+    1. Must have readonly access to public
+    
+    2. `<bucket-name>.s3-website.<AWS-region>.amazonaws.com`
+    
+    3. ARN: Amazon Resource name
+    
+    4. Sample permission:
+    
+```javascript
+{
+    "Version": "2012-10-17",
+    "Statement": [
+    {   
+        "Sid": "PublicReadGetObject",
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:GetObject",
+        "Resource": "arn:aws:s3:::deployment-demo-ganesh/*"
+    }]
+}
+```
+ 
 
