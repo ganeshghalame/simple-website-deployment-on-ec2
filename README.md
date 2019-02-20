@@ -96,5 +96,19 @@ Simple angular website deployment on Amazan EC2 instance
     }]
 }
 ```
+
+# Hosting website on [Github](https://angular.io/guide/deployment#deploy-to-github-pages)
+
+    1. Create the build with below command:
+
+        `ng build --prod --output-path docs --base-href /simple-website-deployment-on-ec2/`
+    
+    2. Copy docs/index.html and name it docs/404.html
+    
+    3. Commit docs directory and push it.
+
+    4. On the GitHub project page, configure it to [publish from the docs folder](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch)
+
+
  
 
