@@ -109,6 +109,11 @@ Simple angular website deployment on Amazan EC2 instance
 
     4. On the GitHub project page, configure it to [publish from the docs folder](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch)
 
+    5. Under your repository name, click  Settings, Use the Select source drop-down menu to select master as your GitHub Pages publishing source.
+
+    6. [Online github site](https://ganeshghalame.github.io/simple-website-deployment-on-ec2/)
+   
+
 
  
 
