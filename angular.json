@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-demo": {
+    "simple-website-deployment-on-ec2": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-demo",
+            "outputPath": "dist/simple-website-deployment-on-ec2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-demo:build"
+            "browserTarget": "simple-website-deployment-on-ec2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-demo:build:production"
+              "browserTarget": "simple-website-deployment-on-ec2:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-demo:build"
+            "browserTarget": "simple-website-deployment-on-ec2:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "angular-demo-e2e": {
+    "simple-website-deployment-on-ec2-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-demo:serve"
+            "devServerTarget": "simple-website-deployment-on-ec2:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-demo:serve:production"
+              "devServerTarget": "simple-website-deployment-on-ec2:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "angular-demo"
+  "defaultProject": "simple-website-deployment-on-ec2"
 }
